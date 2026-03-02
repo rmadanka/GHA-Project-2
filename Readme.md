@@ -8,7 +8,7 @@
 
 ## 📌 Course Overview
 
-This course is a hands-on, practical guide to **Continuous Integration and Continuous Deployment (CI/CD)** using **GitHub Actions** and **Kubernetes**. You will learn how to automate builds, tests, security scans, Docker workflows, and cloud deployments using industry best practices.
+This course is  hands-on, practical guide to **Continuous Integration and Continuous Deployment (CI/CD)** using **GitHub Actions** and **Kubernetes**. You will learn how to automate builds, tests, security scans, Docker workflows, and cloud deployments using industry best practices.
 
 ---
 
