@@ -20,18 +20,18 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v3
       with:
-        username: ${{secrets.DOCKERHUB_USERNAME}}
-        password: ${{secrets.DOCKERHUB_TOKEN}}
+        username: ${{secrets.DOCKER_HUB_USERNAME}}
+        password: ${{secrets.DOCKER_HUB_TOKEN}}
     - name: Build Docker Image
-      run: docker build -t ${{secrets.DOCKERHUB_USERNAME}}/java-docker-app:latest .
+      run: docker build -t ${{secrets.DOCKER_HUB_USERNAME}}/java-docker-app:latest .
     - name: Push Docker Image to DockerHub
-      run: docker push ${{secrets.DOCKERHUB_USERNAME}}/java-docker-app:latest
+      run: docker push ${{secrets.DOCKER_HUB_USERNAME}}/java-docker-app:latest
     - name: Deploy Container to EC2 (via SSH)
       uses: appleboy/ssh-action@v1.1.0
       with:
         host: ${{secrets.EC2_HOST}}
-        username: ${{secrets.EC2_USER}}
-        key: ${{secrets.EC2_SSH_KEY}}
+        username: ${{secrets.EC2_INSTANCE}}
+        key: ${{secrets.EC2_SSH}}
         script: |
           # stop and remove existing containers
           docker rm -f javaapp || true
