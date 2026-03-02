@@ -36,8 +36,8 @@ jobs:
           # stop and remove existing containers
           docker rm -f javaapp || true
           #Pull latest image
-          docker pull ${{secrets.DOCKERHUB_USERNAME}}/java-docker-app:latest
+          docker pull ${{secrets.DOCKER_HUB_USERNAME}}/java-docker-app:latest
           #Run the Container
-          docker run -d -p 8080:8080 --name javaapp ${{secrets.DOCKERHUB_USERNAME}}/java-docker-app:latest
+          docker run -d -p 8080:8080 --name javaapp ${{secrets.DOCKER_HUB_USERNAME}}/java-docker-app:latest
           #Show running containers
           docker ps
